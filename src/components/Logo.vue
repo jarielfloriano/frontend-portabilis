@@ -1,10 +1,17 @@
 <template>
-$END$
+  <div class="w-full flex items-center justify-center">
+    <img :src="image" alt="Logo" class="h-20 w-20" />
+  </div>
 </template>
 
 <script>
+import image from '../assets/logo.png'
 export default {
-name: "Logo"
+  data: function () {
+    return {
+      image: image
+    }
+  }
 }
 </script>
 

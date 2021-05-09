@@ -18,13 +18,105 @@
       <p class="text-2xl font-semibold mb-2 lg:mb-0">Listando os bichanos</p>
       <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">View Logs</button>
     </div>
+
+    <div class="flex flex-col">
+      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <Table
+                :has-checkbox="true"
+                :is-loading="table.isLoading"
+                :is-re-search="table.isReSearch"
+                :columns="table.columns"
+                :rows="table.rows"
+                :total="table.totalRecordCount"
+                :sortable="table.sortable"
+                :messages="table.messages"
+            ></Table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: "List.vue"
-}
+  import { defineComponent, reactive } from "vue";
+  import Table from "../../components/TablePokemon.vue";
+  const sampleData1 = (offst, limit) => {
+    offst = offst + 1;
+    let data = [];
+    for (let i = offst; i <= limit; i++) {
+      data.push({
+        id: i,
+        name: "TEST" + i,
+        email: "test" + i + "@example.com",
+        avatar: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/"+i+".svg",
+        display: function (row) {
+          return (
+              '<a href="#" data-id="' +
+              row.user_id +
+              '" class="is-rows-el name-btn">' +
+              row.name +
+              "</button>"
+          );
+        },
+      });
+    }
+    return data;
+  };
+
+  export default defineComponent({
+    name: "List",
+    components: {
+      Table,
+    },
+    setup() {
+      const table = reactive({
+        isLoading: false,
+        isReSearch: false,
+        columns: [
+          {
+            label: "ID",
+            field: "id",
+            sortable: true,
+            isKey: true,
+          },
+          {
+            label: "Name",
+            field: "name",
+            sortable: true
+          },
+          {
+            label: "Email",
+            field: "email",
+            sortable: true,
+          },
+          {
+            label: "",
+            field: "quick",
+          },
+        ],
+        rows: sampleData1(0, 10),
+        totalRecordCount: 20,
+        sortable: {
+          order: "id",
+          sort: "asc",
+        },
+        messages: {
+          pagingInfo: "Showing {0}-{1} of {2}",
+          pageSizeChangeLabel: "Row count:",
+          gotoPageLabel: "Go to page:",
+          noDataAvailable: "No data",
+        },
+      });
+
+      return {
+        table,
+      };
+    },
+  });
 </script>
 
 <style scoped>

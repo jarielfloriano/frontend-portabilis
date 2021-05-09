@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
-
+import NotFound from "../components/404.vue"
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -20,6 +20,18 @@ const routes: Array<RouteRecordRaw> = [
         import("../views/pokemon/List.vue"),
   },
   {
+    path: "/pokemons/edit/:id",
+    name: "PokemonEdit",
+    component: () =>
+        import("../views/pokemon/List.vue"),
+  },
+  {
+    path: "/pokemons/remove/:id",
+    name: "PokemonRemove",
+    component: () =>
+        import("../views/pokemon/List.vue"),
+  },
+  {
     path: "/about",
     name: "About",
     // route level code-splitting
@@ -28,6 +40,10 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound
+  }
 ];
 
 const router = createRouter({

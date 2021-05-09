@@ -1,6 +1,7 @@
 {
   "name": "frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Jariel Floriano",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -31,5 +32,6 @@
     "vite": "^2.2.3",
     "vite-aliases": "^0.6.3",
     "vue-tsc": "^0.0.24"
-  }
+  },
+  "license": "MIT"
 }

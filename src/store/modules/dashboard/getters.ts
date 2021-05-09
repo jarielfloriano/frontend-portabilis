@@ -1,19 +1,16 @@
 import { GetterTree } from "vuex";
-import { State } from "./index";
-import { RootState } from "@/store";
-// (D) - Getters
-// [D.1] - Define o tipo do getter x
-// => x(state: S): TIPO_DE_X;
-export type Getters<S = State> = {
-  value(state: S): any;
-};
+import {
+  DashboardGettersTypes,
+  DashboardStateTypes,
+  IRootState
+} from "../../interfaces";
 
-// [D.2] - Declara o getter x
-// =>  x: (state) => {
-// =>    return state.x;
-// =>  },
-export const getters: GetterTree<State, RootState> & Getters = {
-  value: (state) => {
-    return state.value;
+export const getters: GetterTree<DashboardStateTypes, IRootState> &
+  DashboardGettersTypes = {
+  getSideBarOpen: (state: DashboardStateTypes) => {
+    return state.sideBarOpen || false;
   },
+  getRootDispatch: (state: DashboardStateTypes) => {
+    return state.rootDispatch || false;
+  }
 };

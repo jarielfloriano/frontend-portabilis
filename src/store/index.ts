@@ -1,32 +1,18 @@
-import { InjectionKey } from "vue";
-import {
-  createStore,
-  Store as VuexStore,
-  useStore as baseUseStore,
-} from "vuex";
-import generic, {
-  State as GenericState,
-  Store as GenericStore,
-} from "./modules/generic_modules";
+import { createStore } from "vuex";
+import { IRootState } from "./interfaces";
+import { DashboardStoreModuleTypes } from "./modules/dashboard/types";
+import { RootStoreModuleTypes } from "./modules/root/types";
 
-// define tipos pro state da store
-export interface RootState {
-  debitos: GenericState;
-  /* other: OtherState; */
-}
+import root from "./modules/root";
 
-export type RootStore = GenericStore<Pick<RootState, "debitos">>;
-// & OtherStore<Pick<RootState, "other">> &
+export const store = createStore<IRootState>(root);
 
-// define injection key
-export const key: InjectionKey<VuexStore<RootState>> = Symbol();
-export const store = createStore<RootState>({
-  modules: {
-    generic,
-    // other
-  },
-});
-// o usar `import useStore from '@store'`
-export default function useStore(): RootStore {
-  return baseUseStore(key);
-}
+type StoreModules = {
+  dashboardModule: DashboardStoreModuleTypes;
+  root: RootStoreModuleTypes;
+};
+
+export type Store = DashboardStoreModuleTypes<
+  Pick<StoreModules, "dashboardModule">
+> &
+  RootStoreModuleTypes<Pick<StoreModules, "root">>;

@@ -1,40 +1,21 @@
-import { ActionContext, ActionTree } from "vuex";
-import { Mutations, MutationTypes } from "./mutations";
-import { State } from "./index";
-import { RootState } from "@/store";
-//(C) - Ações
-// [C.1] inserir a definição da ação x no enum
-// ==> { setX = "NOMEMODULO__SET_ X" }
-export enum ActionTypes {
-  setValue = "GENERIC__SET_VALUE",
-}
+import { ActionTree } from "vuex";
+import { ActionTypes } from "./action-types";
+import { MutationTypes } from "./mutation-types";
+import {
+  DashboardActionsTypes,
+  DashboardStateTypes,
+  IRootState
+} from "../../interfaces";
 
-// !!! AUGUMENTED ACTION CONTEXT !!!
-type AugmentedActionContext = {
-  commit<K extends keyof Mutations>(
-    key: K,
-    payload: Parameters<Mutations[K]>[1]
-  ): ReturnType<Mutations[K]>;
-} & Omit<ActionContext<State, RootState>, "commit">;
-
-// [C.2] definir o tipo da ação setX
-// ==>  [ActionTypes.setX](
-// ==>    { commit }: AugmentedActionContext,
-// ==>    payload: TIPO_DE_X
-// ==>  ): void;
-export interface Actions {
-  [ActionTypes.setValue](
-    { commit }: AugmentedActionContext,
-    payload: any
-  ): void;
-}
-
-// [C.3] declara a ação setX
-// [ActionTypes.setX]({ commit }, payload) {
-//   commit(MutationTypes.X, payload);
-// },
-export const actions: ActionTree<State, RootState> & Actions = {
-  [ActionTypes.setValue]({ commit }, payload) {
-    commit(MutationTypes.VALUE, payload);
+export const actions: ActionTree<DashboardStateTypes, IRootState> &
+  DashboardActionsTypes = {
+  [ActionTypes.TOGGLE]({ commit }, payload: boolean) {
+    commit(MutationTypes.TOGGLE, payload);
+  },
+  [ActionTypes.GET_OPEN]({ commit }, payload: boolean) {
+    commit(MutationTypes.SET_OPEN, payload);
+  },
+  [ActionTypes.SET_ROOT_DISPATCH]({ commit }, payload: boolean) {
+    commit(MutationTypes.SET_ROOT_DISPATCH, payload);
   },
 };

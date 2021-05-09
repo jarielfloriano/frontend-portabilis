@@ -4,8 +4,20 @@ import Home from "../views/Home.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Dashboard",
+    component: Home
+  },
+  {
+    path: "/pokemons",
+    name: "PokemonList",
+    component: () =>
+        import("../views/pokemon/List.vue"),
+  },
+  {
+    path: "/pokemons/add",
+    name: "PokemonAdd",
+    component: () =>
+        import("../views/pokemon/List.vue"),
   },
   {
     path: "/about",

@@ -47,7 +47,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'Navbar',
   computed: {
-    ...mapState(['sideBarOpen'])
+    //...mapState('dashboard', ['sideBarOpen'])
   },
   data() {
     return {
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     toggleSidebar() {
-      this.$store.dispatch('toggleSidebar')
+      this.$store.dispatch('TOGGLE')
     }
   }
 }

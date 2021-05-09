@@ -1,0 +1,14 @@
+{
+  "pokemons": [
+    {
+      "id": 1,
+      "name": "charizard",
+      "url": "Schwartz"
+    },
+    {
+      "id": 2,
+      "name": "pikachu",
+      "url": "Schwartz"
+    }
+  ]
+}

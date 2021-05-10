@@ -4,7 +4,6 @@ import { DashboardStoreModuleTypes } from "./modules/dashboard/types";
 import { RootStoreModuleTypes } from "./modules/root/types";
 
 import root from "./modules/root";
-
 export const store = createStore<IRootState>(root);
 
 type StoreModules = {
@@ -12,7 +11,5 @@ type StoreModules = {
   root: RootStoreModuleTypes;
 };
 
-export type Store = DashboardStoreModuleTypes<
-  Pick<StoreModules, "dashboardModule">
-> &
-  RootStoreModuleTypes<Pick<StoreModules, "root">>;
+export type Store = DashboardStoreModuleTypes<Pick<StoreModules, "dashboardModule">> &
+    RootStoreModuleTypes<Pick<StoreModules, "root">>;

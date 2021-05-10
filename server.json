@@ -10,5 +10,20 @@
       "name": "pikachu",
       "url": "Schwartz"
     }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "code": "073.674.299-90",
+      "name": "Jariel Floriano",
+      "birth": "02/05/1990",
+      "email": "jariel.floriano",
+      "phone": "(47) 98873-4338",
+      "money": "1.535,35",
+      "symbol": {
+        "id": 1,
+        "name": "charizard"
+      }
+    }
   ]
 }

@@ -1,12 +1,12 @@
 <template>
   <table class="min-w-full divide-y divide-gray-200">
     <thead class="bg-gray-50">
-      <th v-for="(column, index) in columns" :key="index" scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+      <th v-for="(column, index) in columns" :key="index" scope="col" class="px-6 py-3 text-left text-xs font-medium bg-gray-200 text-gray-500 uppercase tracking-wider">
         {{ column.field }}
       </th>
     </thead>
     <tbody v-if="rows.length > 0" class="bg-white divide-y divide-gray-200">
-      <tr v-for="(row, i) in rows" :key="i">
+      <tr v-for="(row, i) in rows" :key="i" class="hover:bg-gray-100 border-b-2 border-gray-100">
         <td class="px-6 py-4 whitespace-nowrap">
           <div class="flex items-center">
             <div class="flex-shrink-0 h-10 w-10">

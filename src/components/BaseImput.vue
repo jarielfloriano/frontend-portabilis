@@ -1,38 +1,28 @@
 <template>
-  <div :class="attrsClassName">
-    <label>
+    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
       {{ label }}
-      <div
-          :class="[
-          'input-box',
-          { 'validating-error': errors.length > 0 || hasError }
-        ]"
-      >
-        <input
-            v-model="value"
-            :class="['input', { 'input-error': errors.length > 0 || hasError }]"
-            :disabled="disabled"
-            :placeholder="placeholder"
-            v-bind="attrsRest"
-        />
-        <IconLoading class="icon-loading" v-if="validating" />
-      </div>
     </label>
-    <div v-if="errors.length" class="errors">
-      <div v-for="(error, index) in errors" :key="index">
+
+    <input
+        v-model="value"
+        :class="[attrsClassName, { 'text-red-500 border-red-500': errors.length > 0 || hasError }]"
+        :disabled="disabled"
+        :placeholder="placeholder"
+        v-bind="attrsRest"
+    />
+
+    <div class="text-red-500 text-xs italic" v-if="errors.length">
+      <p v-for="(error, index) in errors" :key="index">
         {{ error }}
-      </div>
+      </p>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import IconLoading from "./svg/IconLoading.vue";
 
 export default defineComponent({
   inheritAttrs: false,
-  components: { IconLoading },
   props: {
     label: {
       type: String,
@@ -53,7 +43,8 @@ export default defineComponent({
       type: Boolean
     },
     placeholder: {
-      type: String
+      type: String,
+      default: null
     },
     hasError: {
       type: Boolean
@@ -81,6 +72,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

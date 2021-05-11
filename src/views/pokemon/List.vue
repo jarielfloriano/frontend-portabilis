@@ -18,15 +18,10 @@
       <form class="w-full" @submit.prevent="handleSubmit()">
         <div class="flex items-center justify-between">
           <div class="w-full sm:w-12/12 md:w-6/3 lg:w-6/12 px-3 mb-6 md:mb-0">
-            <BaseInput
-              id="search"
-              name="code"
-              label="Pesquisar por nome"
-              class="appearance-none block w-full bg-white text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              ref="search"
-              placeholder="... sorry!"
-              @blur="updateSort($event)"
-            />
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Pesquisar por nome
+            </label>
+            <input @blur="updateSort($event)" type="text" name="email_address" id="email_address" class="appearance-none block w-full bg-white text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
           </div>
           <div class="w-full md:w-3/12 lg:w-2/12 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -127,16 +122,10 @@
 
 <script>
   import { defineComponent } from "vue";
-  import TablePokemon from "../../components/TablePokemon.vue";
-  import BaseInput from "../../components/BaseImput.vue";
   import * as backend from '../../services/api/local'
 
   export default defineComponent({
     name: "List",
-    components: {
-      // TablePokemon,
-      BaseInput
-    },
     data() {
       return {
         rows: [],

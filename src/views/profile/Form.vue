@@ -111,8 +111,6 @@
   <script lang="ts">
     import BaseInput from "../../components/BaseImput.vue";
     import { useValidation, ValidationError } from "vue3-form-validation";
-    import apiProfile from "../../services/api/local/profile"
-    import { ref, reactive } from "vue"
 
     export default {
       components: {

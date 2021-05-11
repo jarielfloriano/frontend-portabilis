@@ -15,11 +15,6 @@
     </nav>
     <!-- breadcrumb end -->
 
-    <div class="lg:flex justify-between items-center mb-6">
-      <p class="text-2xl font-semibold mb-2 lg:mb-0">Good afternoon, Joe!</p>
-      <button class="bg-blue-500 hover:bg-blue-600 focus:outline-none rounded-lg px-6 py-2 text-white font-semibold shadow">View Logs</button>
-    </div>
-
     <div class="flex flex-wrap -mx-3 mb-20">
 
       <div class="w-1/2 xl:w-1/4 px-3">
@@ -29,8 +24,8 @@
           </svg>
 
           <div class="text-gray-700">
-            <p class="font-semibold text-3xl">237</p>
-            <p>Products Sold</p>
+            <p class="font-semibold text-3xl">1.589</p>
+            <p>Requisições</p>
           </div>
 
         </div>
@@ -44,7 +39,7 @@
 
           <div class="text-gray-700">
             <p class="font-semibold text-3xl">177</p>
-            <p>Product Reviews</p>
+            <p>Avaliações</p>
           </div>
         </div>
       </div>
@@ -57,7 +52,7 @@
 
           <div class="text-gray-700">
             <p class="font-semibold text-3xl">31</p>
-            <p>New Enquiries</p>
+            <p>Comentários</p>
           </div>
         </div>
       </div>
@@ -69,8 +64,8 @@
           </svg>
 
           <div class="text-gray-700">
-            <p class="font-semibold text-3xl">1,653</p>
-            <p>Product Views</p>
+            <p class="font-semibold text-3xl">8.653</p>
+            <p>Visitas</p>
           </div>
 
         </div>
@@ -81,54 +76,54 @@
     <div class="flex flex-wrap -mx-3">
 
       <div class="w-full xl:w-1/3 px-3">
-        <p class="text-xl font-semibold mb-4">Recent Sales</p>
+        <p class="text-xl font-semibold mb-4">Meu preferido</p>
 
         <div class="w-full bg-white border rounded-lg p-4 mb-8 xl:mb-0">
-          <canvas id="buyers-chart" width="600" height="400"></canvas>
+          <img width="600" height="400" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/8.svg" />
         </div>
       </div>
 
       <div class="w-full xl:w-1/3 px-3">
-        <p class="text-xl font-semibold mb-4">Recent Reviews</p>
+        <p class="text-xl font-semibold mb-4">Visto por último</p>
 
         <div class="w-full bg-white border rounded-lg p-4 mb-8 xl:mb-0">
-          <canvas id="reviews-chart" width="600" height="400"></canvas>
+          <img width="600" height="400" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/10.svg" />
         </div>
       </div>
 
       <div class="w-full xl:w-1/3 px-3">
-        <p class="text-xl font-semibold mb-4">Recent Transactions</p>
+        <p class="text-xl font-semibold mb-4">Requisições recentes</p>
         <div class="w-full bg-white border rounded-lg p-4">
           <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2 mb-4">
             <div>
-              <p class="font-semibold text-xl">Trent Murphy</p>
-              <p>Product 1</p>
+              <p class="font-semibold text-xl">Pikachu</p>
+              <p>Elétrico</p>
             </div>
-            <span class="text-green-500 font-semibold text-lg">$25.00</span>
+            <span class="text-gray-700 font-semibold text-lg">368x</span>
           </div>
 
           <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2 mb-4">
             <div>
-              <p class="font-semibold text-xl">Joseph Brent</p>
-              <p>Product 34</p>
+              <p class="font-semibold text-xl">Bulbasaur</p>
+              <p>Veneno</p>
             </div>
-            <span class="text-red-500 font-semibold text-lg">$74.99</span>
+            <span class="text-gray-700 font-semibold text-lg">251x</span>
           </div>
 
           <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2 mb-4">
             <div>
-              <p class="font-semibold text-xl">Jacob Bator</p>
-              <p>Product 23</p>
+              <p class="font-semibold text-xl">Charizard</p>
+              <p>Fogo</p>
             </div>
-            <span class="text-green-500 font-semibold text-lg">$14.95</span>
+            <span class="text-gray-700 font-semibold text-lg">189x</span>
           </div>
 
           <div class="w-full bg-gray-100 border rounded-lg flex justify-between items-center px-4 py-2">
             <div>
-              <p class="font-semibold text-xl">Alex Mason</p>
-              <p>Product 66</p>
+              <p class="font-semibold text-xl">Gengar</p>
+              <p>Psiquico</p>
             </div>
-            <span class="text-green-500 font-semibold text-lg">$44.99</span>
+            <span class="text-gray-700 font-semibold text-lg">47x</span>
           </div>
         </div>
       </div>

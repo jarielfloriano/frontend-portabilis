@@ -1,27 +1,42 @@
-# Vue 3 + Typescript + Vite
+# Projeto de avaliação técnica - Portabilis tecnologia
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+> Aplicação VueJS + Typescript + Vite + TailwindCSS + NodeJS + JSON Server + PokéAPI
 
-## Recommended IDE Setup
+## 💻 Pré-requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
+* NodeJS 14 LTS em https://github.com/nodesource/distributions/blob/master/README.md
+* JSON Server em https://yarnpkg.com/package/json-server
+* Git em https://git-scm.com/
+* Você tem uma máquina Linux (Gosto de distros ubuntu <3)
 
-### If Using `<script setup>`
+## 🚀 Instalando
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+Para instalar, clone o repositório e instale as dependências:
+```
+git clone https://github.com/jarielfloriano/frontend-portabilis.git
+cd frontend-portabilis
+yarn 
+```
 
-## Type Support For `.vue` Imports in TS
+## ☕ Usando
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+Para uso local, utilize::
+```
+yarn run dev
+```
 
-### If Using Volar
+Abra uma outra aba do terminal, para executar nosso json-server. (ele deve ser instalado como global: yarn global add json-server)
+```
+json-server --watch server.json --port 3001
+```
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+Pronto! Nosso projeto já está executando, e pode ser acessado em:
+```
+http://localhost:3000
+```
 
-### If Using Vetur
+## 📝 Licença
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+MIT

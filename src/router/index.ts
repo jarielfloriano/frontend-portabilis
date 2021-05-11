@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/pokemons/add",
     name: "PokemonAdd",
     component: () =>
-        import("../views/pokemon/Form.vue"),
+        import("../views/pokemon/Search.vue"),
   },
   {
     path: "/pokemons/edit/:id",
@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/pokemons/remove/:id",
     name: "PokemonRemove",
     component: () =>
-        import("../views/pokemon/List.vue"),
+        import("../views/pokemon/Sorry.vue"),
   },
   {
     path: "/profile",

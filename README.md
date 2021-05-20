@@ -1,6 +1,6 @@
 # Projeto de avaliação técnica - Portabilis tecnologia
 
-> Aplicação VueJS + Typescript + Vite + TailwindCSS + NodeJS + JSON Server + PokéAPI
+> Aplicação VueJS 3 + Typescript + Vite + TailwindCSS + NodeJS + JSON Server + PokéAPI
 
 ## 💻 Pré-requisitos
 
